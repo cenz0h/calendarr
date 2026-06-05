@@ -23,17 +23,26 @@ LABEL org.opencontainers.image.title="Calendarr" \
 # Add net.unraid.docker.icon="<url-to-png-or-svg>" alongside this if you want a custom icon.
 LABEL net.unraid.docker.webui="http://[IP]:[PORT:3000]/"
 
+# su-exec lets the entrypoint drop privileges to PUID:PGID after fixing /config ownership.
+RUN apk add --no-cache su-exec
+
 ENV NODE_ENV=production \
     PORT=3000 \
     HOST=0.0.0.0 \
     TZ=Australia/Melbourne \
-    CALENDARR_DB_PATH=/config/calendarr.db
-RUN mkdir -p /config && chown node:node /config
+    CALENDARR_DB_PATH=/config/calendarr.db \
+    PUID=99 \
+    PGID=100
+
+RUN mkdir -p /config
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
-USER node
+COPY docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
   CMD wget -qO- http://127.0.0.1:3000/api/health || exit 1
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["node", "build"]

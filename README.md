@@ -43,27 +43,17 @@ Then open <http://localhost:3000>. The SQLite DB persists at `./config/calendarr
 
 On Unraid, change the volume to `/mnt/user/appdata/calendarr:/config` in `docker-compose.yml`.
 
-### `ORIGIN` env var
-
-If you front Calendarr with a reverse proxy (Swag, Nginx Proxy Manager, Traefik), set `ORIGIN` to the **external URL the browser uses**, e.g.:
-
-```yaml
-environment:
-  ORIGIN: https://calendarr.home.arpa
-```
-
-Without this, SvelteKit's adapter-node will 403 form POSTs.
-
 ## Configuration
 
 | Env var | Default | Purpose |
 |---|---|---|
 | `PORT` | `3000` | HTTP listen port |
 | `HOST` | `0.0.0.0` | HTTP bind address |
-| `ORIGIN` | `http://localhost:3000` | External URL (CSRF/origin check) |
 | `TZ` | `Australia/Melbourne` | Default timezone for new schedules and day-grouping |
 | `CALENDARR_DATE_FORMAT` | `dd/MM/yyyy HH:mm` | Date format used in the web UI ([date-fns tokens](https://date-fns.org/docs/format)). e.g. `MM/dd/yyyy hh:mm a` for US, `yyyy-MM-dd HH:mm` for ISO. |
 | `CALENDARR_DB_PATH` | `/config/calendarr.db` (container) / `./.data/calendarr.db` (dev) | SQLite file location |
+| `PUID` | `99` | User ID the container runs as. Default matches Unraid's `nobody`. On other Linux hosts set to your `id -u` (often 1000). |
+| `PGID` | `100` | Group ID the container runs as. Default matches Unraid's `users`. On other Linux hosts set to your `id -g` (often 1000). |
 
 ## How to use
 
