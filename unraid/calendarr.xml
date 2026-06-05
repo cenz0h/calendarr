@@ -9,13 +9,12 @@
   <Privileged>false</Privileged>
   <!-- TODO before CA submission: replace YOURGITHUBUSER with your GitHub handle and post a support thread. -->
   <Support>https://forums.unraid.net/topic/REPLACE-WITH-YOUR-CALENDARR-SUPPORT-THREAD/</Support>
-  <Project>https://github.com/YOURGITHUBUSER/calendarr</Project>
+  <Project>https://github.com/cenz0h/calendarr</Project>
   <Overview>Publish Sonarr and Radarr calendars to Discord on a schedule or on demand. SvelteKit + SQLite. LAN-only, no auth.</Overview>
   <Category>MediaApp:Other Tools:</Category>
-  <!-- TemplateURL must point to the RAW github URL of this file so CA can fetch updates. -->
-  <TemplateURL>https://raw.githubusercontent.com/YOURGITHUBUSER/calendarr/main/unraid/calendarr.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/cenz0h/calendarr/main/unraid/calendarr.xml</TemplateURL>
   <!-- Icon must be an HTTPS PNG. Host one in the repo and link the raw URL. 256x256 is the sweet spot. -->
-  <Icon>https://raw.githubusercontent.com/YOURGITHUBUSER/calendarr/main/unraid/calendarr.png</Icon>
+  <Icon>https://raw.githubusercontent.com/cenz0h/calendarr/main/unraid/calendarr.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
