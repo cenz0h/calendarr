@@ -1,0 +1,19 @@
+services:
+  calendarr:
+    build: .
+    image: calendarr:latest
+    container_name: calendarr
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      TZ: Australia/Melbourne
+      # Set ORIGIN to the external URL the browser uses (e.g. https://calendarr.home.arpa).
+      # Without this, SvelteKit's adapter-node will 403 form POSTs behind a reverse proxy.
+      ORIGIN: http://localhost:3000
+      PORT: "3000"
+      HOST: "0.0.0.0"
+      CALENDARR_DB_PATH: /config/calendarr.db
+    volumes:
+      # Unraid: change ./config to /mnt/user/appdata/calendarr
+      - ./config:/config

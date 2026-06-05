@@ -1,0 +1,29 @@
+[
+	{
+		"id": 1,
+		"airDateUtc": "2026-06-06T09:00:00Z",
+		"seasonNumber": 3,
+		"episodeNumber": 1,
+		"title": "Tomorrow",
+		"hasFile": false,
+		"series": { "title": "The Bear" }
+	},
+	{
+		"id": 2,
+		"airDateUtc": "2026-06-06T09:30:00Z",
+		"seasonNumber": 3,
+		"episodeNumber": 2,
+		"title": "Next",
+		"hasFile": true,
+		"series": { "title": "The Bear" }
+	},
+	{
+		"id": 3,
+		"airDateUtc": "2026-06-11T01:00:00Z",
+		"seasonNumber": 2,
+		"episodeNumber": 1,
+		"title": "A Son for a Son",
+		"hasFile": false,
+		"series": { "title": "House of the Dragon" }
+	}
+]
