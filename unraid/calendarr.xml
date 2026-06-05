@@ -7,12 +7,15 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support/>
-  <Project/>
+  <!-- TODO before CA submission: replace YOURGITHUBUSER with your GitHub handle and post a support thread. -->
+  <Support>https://forums.unraid.net/topic/REPLACE-WITH-YOUR-CALENDARR-SUPPORT-THREAD/</Support>
+  <Project>https://github.com/YOURGITHUBUSER/calendarr</Project>
   <Overview>Publish Sonarr and Radarr calendars to Discord on a schedule or on demand. SvelteKit + SQLite. LAN-only, no auth.</Overview>
   <Category>MediaApp:Other Tools:</Category>
-  <TemplateURL/>
-  <Icon/>
+  <!-- TemplateURL must point to the RAW github URL of this file so CA can fetch updates. -->
+  <TemplateURL>https://raw.githubusercontent.com/YOURGITHUBUSER/calendarr/main/unraid/calendarr.xml</TemplateURL>
+  <!-- Icon must be an HTTPS PNG. Host one in the repo and link the raw URL. 256x256 is the sweet spot. -->
+  <Icon>https://raw.githubusercontent.com/YOURGITHUBUSER/calendarr/main/unraid/calendarr.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
@@ -58,4 +61,11 @@ State persists in SQLite under /config. LAN-only by design — keep this contain
   <Config Name="PGID" Target="PGID" Default="100" Mode=""
           Description="Group ID the container runs as. Default 100 (Unraid's 'users'). On other Linux hosts use your group, typically 1000."
           Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+
+  <Changes>
+### 0.1.0
+- Initial release.
+- Sonarr + Radarr calendar publishing to Discord, scheduled or on demand.
+- SQLite state at /config. PUID/PGID supported (Unraid defaults 99/100).
+  </Changes>
 </Container>
