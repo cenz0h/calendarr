@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>Calendarr</Name>
-  <!-- Replace YOURDOCKERHUBUSER with your Docker Hub username before importing. -->
-  <Repository>YOURDOCKERHUBUSER/calendarr:latest</Repository>
-  <Registry>https://hub.docker.com/r/YOURDOCKERHUBUSER/calendarr</Registry>
+  <Repository>cenz0h/calendarr:latest</Repository>
+  <Registry>https://hub.docker.com/r/cenz0h/calendarr</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
