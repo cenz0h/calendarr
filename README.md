@@ -41,7 +41,12 @@ docker compose logs -f calendarr
 
 Then open <http://localhost:3000>. The SQLite DB persists at `./config/calendarr.db` (or whatever you mount to `/config`).
 
-On Unraid, change the volume to `/mnt/user/appdata/calendarr:/config` in `docker-compose.yml`.
+## Unraid
+
+1. Copy [`unraid/calendarr.xml`](unraid/calendarr.xml) into `/boot/config/plugins/dockerMan/templates-user/` on your Unraid server.
+2. Go to the **Docker** tab and click **Add Container** at the bottom of the page.
+3. In the **Template** dropdown, select **Calendarr** (under user templates).
+4. The template fills in the repository, port, `/config` volume (`/mnt/user/appdata/calendarr`), and env vars. Adjust if needed, then click **Apply**.
 
 ## Configuration
 
