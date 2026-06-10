@@ -9,7 +9,7 @@
 	let posting = $state<Record<number, string | null>>({});
 
 	function fmtDate(iso: string | null | undefined): string {
-		return fmtDateTime(iso, data.dateFormat);
+		return fmtDateTime(iso, data.dateFormat, data.tz);
 	}
 
 	function statusPill(status: string | null | undefined) {

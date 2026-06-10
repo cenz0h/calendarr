@@ -122,7 +122,7 @@
 	}
 
 	function fmtDate(iso: string | null): string {
-		return fmtDateTime(iso, data.dateFormat);
+		return fmtDateTime(iso, data.dateFormat, data.tz);
 	}
 
 	function serviceNames(ids: number[]): string {

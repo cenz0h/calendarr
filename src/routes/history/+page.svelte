@@ -7,7 +7,7 @@
 	let expanded = $state<number | null>(null);
 
 	function fmtDate(iso: string): string {
-		return fmtDateTime(iso, data.dateFormat);
+		return fmtDateTime(iso, data.dateFormat, data.tz);
 	}
 
 	function pillFor(status: string) {
